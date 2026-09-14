@@ -6,7 +6,7 @@ export function RelatedPosts({ posts }) {
 
   return (
     <section className="py-24 border-t border-[var(--color-border)] mt-24">
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="max-w-7xl mx-auto px-6 sm:px-8 md:px-10 lg:px-12">
         <h2 className="text-heading-1 mb-10">Continue Reading</h2>
         
         <motion.div 

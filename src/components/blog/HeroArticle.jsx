@@ -16,7 +16,7 @@ export default function HeroArticle({ post }) {
       whileInView={{ y: 0, opacity: 1 }}
       viewport={{ once: true, margin: "-40px" }}
       transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1] }}
-      className="max-w-7xl mx-auto px-6"
+      className="max-w-7xl mx-auto px-6 sm:px-8 md:px-10 lg:px-12"
     >
       <Link to={`/blog/${post.slug}`} className="group block">
         {/* Theme-Aligned Cover Header (Consistent with modern editorial theme) */}

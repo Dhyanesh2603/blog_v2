@@ -63,7 +63,7 @@ export default function Contact() {
 
   return (
     <div className="pt-6 pb-14 md:pt-10 md:pb-18">
-      <div className="max-w-2xl mx-auto px-6">
+      <div className="max-w-2xl mx-auto px-6 sm:px-8 md:px-10 lg:px-12">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}

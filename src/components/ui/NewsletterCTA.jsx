@@ -4,7 +4,7 @@ import { ArrowRight } from 'lucide-react';
 
 export default function NewsletterCTA() {
   return (
-    <section className="w-full max-w-7xl mx-auto px-6 py-10 md:py-14">
+    <section className="w-full max-w-7xl mx-auto px-6 sm:px-8 md:px-10 lg:px-12 py-10 md:py-14">
       <motion.div 
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}

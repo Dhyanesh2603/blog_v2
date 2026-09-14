@@ -10,7 +10,7 @@ export default function Blog() {
 
   return (
     <div className="pt-6 pb-14 md:pt-10 md:pb-18">
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="max-w-7xl mx-auto px-6 sm:px-8 md:px-10 lg:px-12">
         {/* Floating Page Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -41,17 +41,16 @@ export default function Blog() {
           />
         </motion.div>
 
-        {/* Post Grid with Side-Sliding Cards */}
+        {/* Post Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch">
           {filteredPosts.map((post, i) => {
-            const fromLeft = i % 2 === 0;
             return (
               <motion.div
                 key={post.id}
-                initial={{ opacity: 0, x: fromLeft ? -55 : 55 }}
-                animate={{ opacity: 1, x: 0 }}
+                initial={{ opacity: 0, y: 22 }}
+                animate={{ opacity: 1, y: 0 }}
                 transition={{ 
-                  duration: 0.65, 
+                  duration: 0.55, 
                   delay: (i % 3) * 0.08, 
                   ease: [0.22, 1, 0.36, 1] 
                 }}

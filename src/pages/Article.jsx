@@ -42,7 +42,7 @@ export default function Article() {
       </div>
 
       {/* Article Content */}
-      <div className="max-w-7xl mx-auto px-6 sm:px-8 md:px-10">
+      <div className="max-w-7xl mx-auto px-6 sm:px-8 md:px-10 lg:px-12">
         <div className="flex gap-12 lg:gap-16 relative">
           {/* Sticky TOC — Desktop only */}
           {post.tableOfContents && (

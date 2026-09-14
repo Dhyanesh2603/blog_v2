@@ -22,7 +22,7 @@ export default function Home() {
           aria-hidden="true"
         />
 
-        <div className="max-w-5xl mx-auto px-6 text-center">
+        <div className="max-w-5xl mx-auto px-6 sm:px-8 md:px-10 lg:px-12 text-center">
           {/* Overline Badge */}
           <motion.div
             initial={{ opacity: 0, y: 15 }}
@@ -101,7 +101,7 @@ export default function Home() {
 
       {/* ── 2. Featured Chapter One (Appears AFTER Intro) ── */}
       <section id="featured-chapter" className="py-10 md:py-14 border-t border-[var(--color-border)]/60 bg-[var(--color-elevated)]/25 overflow-hidden">
-        <div className="max-w-7xl mx-auto px-6 mb-5">
+        <div className="max-w-7xl mx-auto px-6 sm:px-8 md:px-10 lg:px-12 mb-5">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -132,7 +132,7 @@ export default function Home() {
 
       {/* ── 3. Writing Library with Side-Sliding Cards ── */}
       <section id="library" className="py-10 md:py-14 border-t border-[var(--color-border)]/60 overflow-hidden">
-        <div className="max-w-7xl mx-auto px-6">
+        <div className="max-w-7xl mx-auto px-6 sm:px-8 md:px-10 lg:px-12">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
