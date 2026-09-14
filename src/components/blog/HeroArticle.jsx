@@ -12,10 +12,10 @@ export default function HeroArticle({ post }) {
 
   return (
     <motion.section 
-      initial={{ x: -70, opacity: 0 }}
-      whileInView={{ x: 0, opacity: 1 }}
-      viewport={{ once: true, margin: "-60px" }}
-      transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+      initial={{ y: 24, opacity: 0 }}
+      whileInView={{ y: 0, opacity: 1 }}
+      viewport={{ once: true, margin: "-40px" }}
+      transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1] }}
       className="max-w-7xl mx-auto px-6"
     >
       <Link to={`/blog/${post.slug}`} className="group block">
@@ -56,7 +56,7 @@ export default function HeroArticle({ post }) {
           </div>
         </div>
         
-        <div className="max-w-4xl pl-2 sm:pl-4 md:pl-5 pr-2">
+        <div className="w-full px-1 sm:px-2">
           <div className="mb-2.5">
             <span className="inline-block px-3 py-1 rounded-full border border-[var(--color-accent)]/20 text-caption text-[var(--color-accent)] bg-[var(--color-accent-soft)] font-medium uppercase tracking-wider">
               {post.categoryLabel || post.category}

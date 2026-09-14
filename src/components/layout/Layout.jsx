@@ -51,7 +51,7 @@ export default function Layout() {
   useKeyboardShortcut('k', handleToggleSearch, { metaKey: true });
 
   return (
-    <div className="flex min-h-screen flex-col bg-[var(--color-canvas)] text-[var(--color-primary)] selection:bg-[var(--color-accent)] selection:text-white">
+    <div className="flex min-h-screen w-full flex-col bg-[var(--color-canvas)] text-[var(--color-primary)] selection:bg-[var(--color-accent)] selection:text-white overflow-x-clip">
       <ScrollToTop />
       <ScrollProgress />
       

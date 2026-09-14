@@ -41,7 +41,7 @@ export default function Home() {
             initial={{ opacity: 0, y: 25 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.75, delay: 0.08, ease: [0.22, 1, 0.36, 1] }}
-            className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-[68px] leading-[1.12] tracking-[-0.035em] text-[var(--color-primary)] font-medium max-w-4xl mx-auto mb-3 sm:mb-4"
+            className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-[54px] leading-[1.14] tracking-[-0.03em] text-[var(--color-primary)] font-medium max-w-3xl mx-auto mb-3 sm:mb-4"
           >
             Small thoughts, honestly shared
           </motion.h1>
@@ -100,7 +100,7 @@ export default function Home() {
       </section>
 
       {/* ── 2. Featured Chapter One (Appears AFTER Intro) ── */}
-      <section id="featured-chapter" className="py-10 md:py-14 border-t border-[var(--color-border)]/60 bg-[var(--color-elevated)]/25">
+      <section id="featured-chapter" className="py-10 md:py-14 border-t border-[var(--color-border)]/60 bg-[var(--color-elevated)]/25 overflow-hidden">
         <div className="max-w-7xl mx-auto px-6 mb-5">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -126,12 +126,12 @@ export default function Home() {
           </motion.div>
         </div>
 
-        {/* Chapter 1 Card slides in smoothly from the side */}
+        {/* Chapter 1 Card */}
         <HeroArticle post={featured} />
       </section>
 
       {/* ── 3. Writing Library with Side-Sliding Cards ── */}
-      <section id="library" className="py-10 md:py-14 border-t border-[var(--color-border)]/60">
+      <section id="library" className="py-10 md:py-14 border-t border-[var(--color-border)]/60 overflow-hidden">
         <div className="max-w-7xl mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 30 }}

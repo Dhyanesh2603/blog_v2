@@ -6,8 +6,7 @@ export function useTheme() {
   const [theme, setTheme] = useState(() => {
     if (typeof window === 'undefined') return 'light';
     const stored = localStorage.getItem('theme');
-    if (stored) return stored;
-    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    return stored === 'dark' ? 'dark' : 'light';
   });
 
   useEffect(() => {
@@ -43,17 +42,13 @@ export function useTheme() {
     }
   }, [theme]);
 
-  // Listen for system preference changes
+  // System preference listener only applies if user has not stored a preference
   useEffect(() => {
-    const mq = window.matchMedia('(prefers-color-scheme: dark)');
-    const handler = (e) => {
-      const stored = localStorage.getItem('theme');
-      if (!stored) {
-        setTheme(e.matches ? 'dark' : 'light');
-      }
-    };
-    mq.addEventListener('change', handler);
-    return () => mq.removeEventListener('change', handler);
+    const stored = localStorage.getItem('theme');
+    if (!stored) {
+      // Ensure initial default is strictly light
+      document.documentElement.classList.remove('dark');
+    }
   }, []);
 
   const toggle = useCallback(() => {

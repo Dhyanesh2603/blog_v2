@@ -43,7 +43,7 @@ export default function Article() {
 
       {/* Article Content */}
       <div className="max-w-7xl mx-auto px-6 sm:px-8 md:px-10">
-        <div className="flex gap-12 lg:gap-16 relative pl-1 sm:pl-3">
+        <div className="flex gap-12 lg:gap-16 relative">
           {/* Sticky TOC — Desktop only */}
           {post.tableOfContents && (
             <aside className="hidden lg:block flex-shrink-0">
