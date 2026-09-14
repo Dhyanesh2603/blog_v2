@@ -56,18 +56,18 @@ export default function HeroArticle({ post }) {
           </div>
         </div>
         
-        <div className="max-w-4xl">
+        <div className="max-w-4xl pl-2 sm:pl-4 md:pl-5 pr-2">
           <div className="mb-2.5">
             <span className="inline-block px-3 py-1 rounded-full border border-[var(--color-accent)]/20 text-caption text-[var(--color-accent)] bg-[var(--color-accent-soft)] font-medium uppercase tracking-wider">
               {post.categoryLabel || post.category}
             </span>
           </div>
           
-          <h1 className="text-display text-[var(--color-primary)] mb-2.5 line-clamp-2 transition-colors duration-200 group-hover:text-[var(--color-accent)]">
+          <h1 className="font-serif text-2xl sm:text-3xl md:text-4xl font-semibold leading-[1.25] text-[var(--color-primary)] mb-2.5 line-clamp-2 transition-colors duration-200 group-hover:text-[var(--color-accent)]">
             {post.title}
           </h1>
           
-          <p className="text-body text-[var(--color-secondary)] mb-4 line-clamp-2 max-w-3xl">
+          <p className="text-body-sm text-[var(--color-secondary)] mb-4 line-clamp-2 max-w-3xl leading-relaxed text-sm sm:text-base">
             {post.excerpt}
           </p>
           

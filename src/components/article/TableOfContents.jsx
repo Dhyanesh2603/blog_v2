@@ -29,7 +29,7 @@ export function TableOfContents({ items }) {
   if (!items || items.length === 0) return null;
 
   return (
-    <nav className="hidden lg:block sticky top-32 w-56">
+    <nav className="hidden lg:block sticky top-32 w-56 pl-2">
       <h3 className="text-overline text-[var(--color-muted)] mb-4">On this page</h3>
       <ul className="space-y-2">
         {items.map((item) => {

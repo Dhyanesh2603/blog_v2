@@ -46,7 +46,7 @@ export const posts = [
         </figcaption>
       </figure>
 
-      <p class="text-body" style="font-size: 20px; line-height: 1.8; color: var(--color-primary);">
+      <p class="text-body" style="font-size: 18px; line-height: 1.75; color: var(--color-primary);">
         Earlier this year I set out to fund a set of Direct Instruction math curricula for a school in Bangalore that serves students with autism. The program, Connecting Math Concepts, is highly scripted and evidence-based, but it's also expensive, and the school didn't have it.
       </p>
 
@@ -117,7 +117,7 @@ export const posts = [
         </figcaption>
       </figure>
 
-      <blockquote style="border-left: 3px solid var(--color-series-blue); padding-left: 1.5rem; margin: 2.5rem 0; font-style: italic; font-size: 20px; line-height: 1.7; color: var(--color-primary);">
+      <blockquote style="border-left: 3px solid var(--color-series-blue); padding-left: 1.5rem; margin: 2.5rem 0; font-style: italic; font-size: 18px; line-height: 1.7; color: var(--color-primary);">
         "The curriculum was built somewhere else, for someone else. Watching it land in this classroom raised a question I hadn't planned on asking."
       </blockquote>
 

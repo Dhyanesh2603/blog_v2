@@ -19,7 +19,9 @@ export function ArticleHeader({ post }) {
         </span>
       )}
       
-      <h1 className="text-display mt-3 sm:mt-4">{title}</h1>
+      <h1 className="font-serif text-2xl sm:text-3xl md:text-4xl lg:text-[42px] font-semibold leading-[1.22] text-[var(--color-primary)] mt-3 sm:mt-4 tracking-tight">
+        {title}
+      </h1>
       
       {excerpt && (
         <p className="text-body text-[var(--color-secondary)] mt-2.5 sm:mt-3 max-w-2xl mx-auto">
