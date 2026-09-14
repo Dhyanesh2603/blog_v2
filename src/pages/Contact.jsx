@@ -1,10 +1,10 @@
 import { useState } from 'react';
 import { motion } from 'motion/react';
-import { Send, CheckCircle2, AlertCircle, Loader2 } from 'lucide-react';
+import { Send, CheckCircle2, AlertCircle, Loader2, Mail } from 'lucide-react';
 
 export default function Contact() {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
-  const [status, setStatus] = useState('idle'); // 'idle' | 'sending' | 'success' | 'error'
+  const [status, setStatus] = useState('idle'); // 'idle' | 'sending' | 'success' | 'activation' | 'error'
   const [errorMessage, setErrorMessage] = useState('');
 
   // Target email obfuscated in base64 (temporarily dhyanesh450@gmail.com for testing)
@@ -44,14 +44,20 @@ export default function Contact() {
       if (response.ok && (data.success === 'true' || data.success === true)) {
         setStatus('success');
         setFormData({ name: '', email: '', message: '' });
+      } else if (data.message && data.message.toLowerCase().includes('activation')) {
+        setStatus('activation');
+        setErrorMessage(data.message);
       } else {
         throw new Error(data.message || 'Submission failed');
       }
     } catch (err) {
       console.error('Contact submission error:', err);
-      // Fallback grace
-      setStatus('success');
-      setFormData({ name: '', email: '', message: '' });
+      if (err.message && err.message.toLowerCase().includes('activation')) {
+        setStatus('activation');
+      } else {
+        setStatus('error');
+        setErrorMessage(err.message || 'Failed to send message. Please try again.');
+      }
     }
   };
 
@@ -81,7 +87,26 @@ export default function Contact() {
           transition={{ duration: 0.75, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
           className="bg-[var(--color-surface)] border border-[var(--color-border)] rounded-2xl p-6 sm:p-8 shadow-sm"
         >
-          {status === 'success' ? (
+          {status === 'activation' ? (
+            <div className="text-center py-10">
+              <div className="w-14 h-14 rounded-full bg-amber-500/10 text-amber-500 flex items-center justify-center mx-auto mb-5">
+                <Mail size={32} />
+              </div>
+              <h3 className="text-heading-2 text-[var(--color-primary)] mb-2">Activation Link Sent!</h3>
+              <p className="text-body-sm text-[var(--color-secondary)] max-w-md mx-auto mb-4">
+                FormSubmit has sent a one-time confirmation email to activate your inbox.
+              </p>
+              <div className="p-4 rounded-xl bg-[var(--color-elevated)] border border-[var(--color-border)] text-caption text-[var(--color-secondary)] max-w-md mx-auto mb-8">
+                Please check your email inbox (including the <strong>Spam / Junk</strong> folder) for an email from FormSubmit with the button <strong>"Activate Form"</strong>. Once clicked, all messages will arrive instantly!
+              </div>
+              <button
+                onClick={() => setStatus('idle')}
+                className="px-6 py-2.5 rounded-full border border-[var(--color-border)] text-caption font-semibold text-[var(--color-primary)] hover:bg-[var(--color-elevated)] transition-colors cursor-pointer"
+              >
+                Back to form
+              </button>
+            </div>
+          ) : status === 'success' ? (
             <div className="text-center py-10">
               <div className="w-14 h-14 rounded-full bg-emerald-500/10 text-emerald-500 flex items-center justify-center mx-auto mb-5">
                 <CheckCircle2 size={32} />
