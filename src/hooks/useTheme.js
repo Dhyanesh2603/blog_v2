@@ -5,8 +5,16 @@ export function useTheme() {
 
   const [theme, setTheme] = useState(() => {
     if (typeof window === 'undefined') return 'light';
-    const stored = localStorage.getItem('theme');
-    return stored === 'dark' ? 'dark' : 'light';
+    try {
+      if (localStorage.getItem('theme_v2_init') !== 'true') {
+        localStorage.removeItem('theme');
+        localStorage.setItem('theme_v2_init', 'true');
+      }
+      const stored = localStorage.getItem('theme');
+      return stored === 'dark' ? 'dark' : 'light';
+    } catch (e) {
+      return 'light';
+    }
   });
 
   useEffect(() => {
