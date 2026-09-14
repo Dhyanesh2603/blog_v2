@@ -10,7 +10,7 @@ import { posts, categories, getFeaturedPost, getPostsByCategory } from '../data/
 export default function Home() {
   const [activeCategory, setActiveCategory] = useState('all');
   const featured = getFeaturedPost();
-  const filteredPosts = getPostsByCategory(activeCategory).filter(p => p.id !== featured?.id);
+  const filteredPosts = getPostsByCategory(activeCategory);
 
   return (
     <>

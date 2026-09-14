@@ -21,11 +21,20 @@ export default function HeroArticle({ post }) {
       <Link to={`/blog/${post.slug}`} className="group block">
         {/* Theme-Aligned Cover Header (Consistent with modern editorial theme) */}
         <div className="w-full h-44 sm:h-56 md:h-64 rounded-2xl bg-gradient-to-br from-[var(--color-elevated)] via-[var(--color-surface)] to-[var(--color-subtle)] mb-8 transition-transform duration-500 ease-out group-hover:scale-[1.008] border border-[var(--color-border)] relative overflow-hidden flex flex-col justify-between p-6 sm:p-8">
-          {/* Subtle Ambient Theme Glow */}
-          <div 
-            className="absolute -top-16 -right-16 w-64 h-64 bg-[var(--color-accent)]/10 rounded-full blur-3xl group-hover:bg-[var(--color-accent)]/18 transition-all duration-700 pointer-events-none" 
-            aria-hidden="true"
-          />
+          {/* Domain Generative Telemetry SVG Pattern */}
+          <svg className="absolute inset-0 w-full h-full opacity-40 dark:opacity-45 pointer-events-none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+            <defs>
+              <radialGradient id="hero-ip-aura" cx="80%" cy="30%" r="70%">
+                <stop offset="0%" stopColor="#6366F1" stopOpacity="0.3" />
+                <stop offset="100%" stopColor="#6366F1" stopOpacity="0" />
+              </radialGradient>
+            </defs>
+            <rect width="100%" height="100%" fill="url(#hero-ip-aura)" />
+            <circle cx="80%" cy="40%" r="50" fill="none" stroke="#6366F1" strokeWidth="1" strokeDasharray="4 4" opacity="0.7" />
+            <circle cx="80%" cy="40%" r="100" fill="none" stroke="#6366F1" strokeWidth="1" opacity="0.45" />
+            <circle cx="80%" cy="40%" r="160" fill="none" stroke="#6366F1" strokeWidth="1" strokeDasharray="5 5" opacity="0.3" />
+            <line x1="0" y1="60%" x2="100%" y2="60%" stroke="#6366F1" strokeWidth="0.75" strokeDasharray="4 4" opacity="0.3" />
+          </svg>
 
           <div className="relative z-10 flex items-center justify-between">
             <span className="text-overline text-[var(--color-primary)] font-bold tracking-widest bg-[var(--color-surface)]/90 backdrop-blur-md px-3.5 py-1.5 rounded-full border border-[var(--color-border)] shadow-xs">
