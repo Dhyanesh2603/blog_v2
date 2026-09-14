@@ -20,7 +20,7 @@ export default function HeroArticle({ post }) {
     >
       <Link to={`/blog/${post.slug}`} className="group block">
         {/* Theme-Aligned Cover Header (Consistent with modern editorial theme) */}
-        <div className="w-full h-44 sm:h-56 md:h-64 rounded-2xl bg-gradient-to-br from-[var(--color-elevated)] via-[var(--color-surface)] to-[var(--color-subtle)] mb-8 transition-transform duration-500 ease-out group-hover:scale-[1.008] border border-[var(--color-border)] relative overflow-hidden flex flex-col justify-between p-6 sm:p-8">
+        <div className="w-full h-44 sm:h-56 md:h-64 rounded-2xl bg-gradient-to-br from-[var(--color-elevated)] via-[var(--color-surface)] to-[var(--color-subtle)] mb-8 transition-all duration-500 ease-out group-hover:scale-[1.008] border border-[var(--color-border)] shadow-sm hover:shadow-md relative overflow-hidden flex flex-col justify-between p-6 sm:p-8">
           {/* Domain Generative Telemetry SVG Pattern */}
           <svg className="absolute inset-0 w-full h-full opacity-40 dark:opacity-45 pointer-events-none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
             <defs>
