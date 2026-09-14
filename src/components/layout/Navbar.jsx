@@ -31,9 +31,11 @@ export default function Navbar({ onSearchOpen }) {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Close mobile menu on route change
+  // Reset navbar state on route change
   useEffect(() => {
     setMobileMenuOpen(false);
+    setVisible(true);
+    setScrolled(false);
   }, [location.pathname]);
 
   const navLinks = [

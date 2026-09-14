@@ -56,20 +56,20 @@ export default function Contact() {
   };
 
   return (
-    <div className="pt-36 pb-24 md:pt-44 md:pb-32">
+    <div className="pt-6 pb-14 md:pt-10 md:pb-18">
       <div className="max-w-2xl mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
         >
-          <p className="text-overline text-[var(--color-series-blue)] font-bold tracking-widest mb-3">
+          <p className="text-overline text-[var(--color-series-blue)] font-bold tracking-widest mb-2">
             Get in touch
           </p>
-          <h1 className="text-display text-[var(--color-primary)] font-serif mb-4">
+          <h1 className="text-display text-[var(--color-primary)] font-serif mb-3">
             Send a note
           </h1>
-          <p className="text-body text-[var(--color-secondary)] mb-10 text-lg leading-relaxed">
+          <p className="text-body text-[var(--color-secondary)] mb-6 text-base sm:text-lg leading-relaxed">
             Have thoughts on a piece, questions about the Bangalore curriculum project, or just want to say hi? 
             Your message will be sent directly to me.
           </p>
@@ -79,7 +79,7 @@ export default function Contact() {
           initial={{ opacity: 0, y: 35 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.75, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
-          className="bg-[var(--color-surface)] border border-[var(--color-border)] rounded-2xl p-8 sm:p-10 shadow-sm"
+          className="bg-[var(--color-surface)] border border-[var(--color-border)] rounded-2xl p-6 sm:p-8 shadow-sm"
         >
           {status === 'success' ? (
             <div className="text-center py-10">

@@ -2,6 +2,7 @@ import { useState, useCallback, useEffect } from 'react';
 import { Outlet, useLocation } from 'react-router';
 import { motion, AnimatePresence } from 'motion/react';
 import Lenis from 'lenis';
+import ScrollToTop from './ScrollToTop';
 import Navbar from './Navbar';
 import Footer from './Footer';
 import ScrollProgress from '../ui/ScrollProgress';
@@ -43,11 +44,6 @@ export default function Layout() {
     };
   }, []);
 
-  // Scroll to top on route change
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [location.pathname]);
-
   const handleToggleSearch = useCallback(() => {
     setIsSearchOpen(prev => !prev);
   }, []);
@@ -56,18 +52,18 @@ export default function Layout() {
 
   return (
     <div className="flex min-h-screen flex-col bg-[var(--color-canvas)] text-[var(--color-primary)] selection:bg-[var(--color-accent)] selection:text-white">
+      <ScrollToTop />
       <ScrollProgress />
       
       <Navbar onSearchOpen={() => setIsSearchOpen(true)} />
       
-      <AnimatePresence mode="wait">
+      <AnimatePresence>
         <motion.main
           key={location.pathname}
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -10 }}
-          transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
-          className="flex-1 pt-24"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
+          className="flex-1 pt-20"
         >
           <Outlet />
         </motion.main>

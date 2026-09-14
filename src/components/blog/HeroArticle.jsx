@@ -20,7 +20,7 @@ export default function HeroArticle({ post }) {
     >
       <Link to={`/blog/${post.slug}`} className="group block">
         {/* Theme-Aligned Cover Header (Consistent with modern editorial theme) */}
-        <div className="w-full h-44 sm:h-56 md:h-64 rounded-2xl bg-gradient-to-br from-[var(--color-elevated)] via-[var(--color-surface)] to-[var(--color-subtle)] mb-8 transition-all duration-500 ease-out group-hover:scale-[1.008] border border-[var(--color-border)] shadow-sm hover:shadow-md relative overflow-hidden flex flex-col justify-between p-6 sm:p-8">
+        <div className="w-full h-40 sm:h-52 md:h-60 rounded-2xl bg-gradient-to-br from-[var(--color-elevated)] via-[var(--color-surface)] to-[var(--color-subtle)] mb-5 transition-all duration-500 ease-out group-hover:scale-[1.008] border border-[var(--color-border)] shadow-sm hover:shadow-md relative overflow-hidden flex flex-col justify-between p-5 sm:p-7">
           {/* Domain Generative Telemetry SVG Pattern */}
           <svg className="absolute inset-0 w-full h-full opacity-40 dark:opacity-45 pointer-events-none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
             <defs>
@@ -37,10 +37,10 @@ export default function HeroArticle({ post }) {
           </svg>
 
           <div className="relative z-10 flex items-center justify-between">
-            <span className="text-overline text-[var(--color-primary)] font-bold tracking-widest bg-[var(--color-surface)]/90 backdrop-blur-md px-3.5 py-1.5 rounded-full border border-[var(--color-border)] shadow-xs">
+            <span className="text-overline text-[var(--color-primary)] font-bold tracking-widest bg-[var(--color-surface)]/90 backdrop-blur-md px-3 py-1 rounded-full border border-[var(--color-border)] shadow-xs">
               {post.chapter || 'Chapter 1'}
             </span>
-            <div className="hidden sm:flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[var(--color-surface)]/90 backdrop-blur text-caption text-[var(--color-primary)] font-medium border border-[var(--color-border)] shadow-xs transition-all duration-300 group-hover:translate-x-1 group-hover:border-[var(--color-border-hover)]">
+            <div className="hidden sm:flex items-center gap-2 px-3 py-1 rounded-full bg-[var(--color-surface)]/90 backdrop-blur text-caption text-[var(--color-primary)] font-medium border border-[var(--color-border)] shadow-xs transition-all duration-300 group-hover:translate-x-1 group-hover:border-[var(--color-border-hover)]">
               <span>Read Chapter</span>
               <ArrowRight size={14} className="text-[var(--color-accent)]" />
             </div>
@@ -57,21 +57,21 @@ export default function HeroArticle({ post }) {
         </div>
         
         <div className="max-w-4xl">
-          <div className="mb-4">
+          <div className="mb-2.5">
             <span className="inline-block px-3 py-1 rounded-full border border-[var(--color-accent)]/20 text-caption text-[var(--color-accent)] bg-[var(--color-accent-soft)] font-medium uppercase tracking-wider">
               {post.categoryLabel || post.category}
             </span>
           </div>
           
-          <h1 className="text-display text-[var(--color-primary)] mb-5 line-clamp-2 transition-colors duration-200 group-hover:text-[var(--color-accent)]">
+          <h1 className="text-display text-[var(--color-primary)] mb-2.5 line-clamp-2 transition-colors duration-200 group-hover:text-[var(--color-accent)]">
             {post.title}
           </h1>
           
-          <p className="text-body text-[var(--color-secondary)] mb-8 line-clamp-2 max-w-3xl">
+          <p className="text-body text-[var(--color-secondary)] mb-4 line-clamp-2 max-w-3xl">
             {post.excerpt}
           </p>
           
-          <div className="flex items-center justify-between pt-2">
+          <div className="flex items-center justify-between pt-1">
             <div className="flex items-center gap-2.5 text-caption text-[var(--color-muted)]">
               <span className="font-semibold text-[var(--color-primary)]">
                 {authorName}

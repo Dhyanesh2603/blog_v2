@@ -37,13 +37,13 @@ export default function Article() {
       <ScrollProgress />
 
       {/* Article Header */}
-      <div className="pt-32 pb-8">
+      <div className="pt-4 pb-2 md:pt-6">
         <ArticleHeader post={post} />
       </div>
 
       {/* Article Content */}
       <div className="max-w-7xl mx-auto px-6">
-        <div className="flex gap-16 relative">
+        <div className="flex gap-12 lg:gap-16 relative">
           {/* Sticky TOC — Desktop only */}
           {post.tableOfContents && (
             <aside className="hidden lg:block flex-shrink-0">
@@ -56,8 +56,8 @@ export default function Article() {
             <ArticleBody content={post.body} />
 
             {/* Share + Author */}
-            <div className="max-w-[720px] mx-auto px-6 pb-16 space-y-8">
-              <div className="flex items-center justify-between pt-8 border-t border-[var(--color-border)]">
+            <div className="max-w-[720px] mx-auto px-6 pb-10 space-y-6">
+              <div className="flex items-center justify-between pt-6 border-t border-[var(--color-border)]">
                 <p className="text-caption text-[var(--color-muted)]">Share this article</p>
                 <ShareButtons title={post.title} slug={post.slug} />
               </div>
@@ -69,7 +69,7 @@ export default function Article() {
 
       {/* Related Posts */}
       {related.length > 0 && (
-        <section className="py-20 border-t border-[var(--color-border)]">
+        <section className="py-10 md:py-14 border-t border-[var(--color-border)]">
           <RelatedPosts posts={related} />
         </section>
       )}

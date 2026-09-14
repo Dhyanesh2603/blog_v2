@@ -1,6 +1,6 @@
 export function ArticleBody({ content, className = '' }) {
   return (
-    <div className={`py-16 max-w-[720px] mx-auto px-6 ${className}`}>
+    <div className={`py-8 md:py-10 max-w-[720px] mx-auto px-6 ${className}`}>
       <div 
         className="prose"
         dangerouslySetInnerHTML={{ __html: content }}

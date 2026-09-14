@@ -15,7 +15,7 @@ export default function Home() {
   return (
     <>
       {/* ── 1. Premium Editorial Masthead (Modern UI + Required Content) ── */}
-      <section className="relative pt-36 pb-20 md:pt-48 md:pb-28 overflow-hidden">
+      <section className="relative pt-6 pb-8 md:pt-10 md:pb-12 overflow-hidden">
         {/* Subtle Ambient Background Bloom */}
         <div 
           className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] bg-gradient-to-tr from-[var(--color-series-blue)]/6 via-[var(--color-accent)]/4 to-transparent blur-3xl pointer-events-none rounded-full -z-10" 
@@ -28,7 +28,7 @@ export default function Home() {
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-            className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full border border-[var(--color-border)] bg-[var(--color-surface)]/80 backdrop-blur-xl shadow-xs mb-8"
+            className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full border border-[var(--color-border)] bg-[var(--color-surface)]/80 backdrop-blur-xl shadow-xs mb-4 sm:mb-5"
           >
             <span className="w-2 h-2 rounded-full bg-[var(--color-series-blue)] animate-pulse" />
             <span className="text-[11px] sm:text-xs font-semibold uppercase tracking-[0.16em] text-[var(--color-secondary)]">
@@ -41,7 +41,7 @@ export default function Home() {
             initial={{ opacity: 0, y: 25 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.75, delay: 0.08, ease: [0.22, 1, 0.36, 1] }}
-            className="font-serif text-5xl sm:text-6xl md:text-7xl lg:text-[76px] leading-[1.08] tracking-[-0.035em] text-[var(--color-primary)] font-medium max-w-4xl mx-auto mb-6"
+            className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-[68px] leading-[1.12] tracking-[-0.035em] text-[var(--color-primary)] font-medium max-w-4xl mx-auto mb-3 sm:mb-4"
           >
             Small thoughts, honestly shared
           </motion.h1>
@@ -51,7 +51,7 @@ export default function Home() {
             initial={{ opacity: 0, y: 25 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.75, delay: 0.16, ease: [0.22, 1, 0.36, 1] }}
-            className="text-body text-[var(--color-secondary)] max-w-2xl mx-auto text-lg sm:text-xl md:text-2xl font-normal leading-relaxed"
+            className="text-body text-[var(--color-secondary)] max-w-2xl mx-auto text-base sm:text-lg md:text-xl font-normal leading-relaxed"
           >
             Essays on people, place, and the questions that follow me home.
           </motion.p>
@@ -61,7 +61,7 @@ export default function Home() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.25, ease: [0.22, 1, 0.36, 1] }}
-            className="flex flex-wrap items-center justify-center gap-3 mt-12 pt-2"
+            className="flex flex-wrap items-center justify-center gap-2.5 sm:gap-3 mt-6 sm:mt-7"
           >
             <a 
               href="#featured-chapter"
@@ -100,8 +100,8 @@ export default function Home() {
       </section>
 
       {/* ── 2. Featured Chapter One (Appears AFTER Intro) ── */}
-      <section id="featured-chapter" className="py-20 border-t border-[var(--color-border)]/60 bg-[var(--color-elevated)]/25">
-        <div className="max-w-7xl mx-auto px-6 mb-8">
+      <section id="featured-chapter" className="py-10 md:py-14 border-t border-[var(--color-border)]/60 bg-[var(--color-elevated)]/25">
+        <div className="max-w-7xl mx-auto px-6 mb-5">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -110,7 +110,7 @@ export default function Home() {
             className="flex items-center justify-between"
           >
             <div>
-              <p className="text-overline text-[var(--color-series-blue)] font-bold tracking-widest mb-2">
+              <p className="text-overline text-[var(--color-series-blue)] font-bold tracking-widest mb-1.5">
                 Featured Narrative · Series 01
               </p>
               <h2 className="text-heading-1 text-[var(--color-primary)] font-serif">
@@ -131,7 +131,7 @@ export default function Home() {
       </section>
 
       {/* ── 3. Writing Library with Side-Sliding Cards ── */}
-      <section id="library" className="py-28 border-t border-[var(--color-border)]/60">
+      <section id="library" className="py-10 md:py-14 border-t border-[var(--color-border)]/60">
         <div className="max-w-7xl mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -139,9 +139,9 @@ export default function Home() {
             viewport={{ once: true, margin: "-50px" }}
             transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1] }}
           >
-            <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6 mb-10">
+            <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-6">
               <div>
-                <p className="text-overline text-[var(--color-muted)] font-semibold tracking-widest mb-2">Archive</p>
+                <p className="text-overline text-[var(--color-muted)] font-semibold tracking-widest mb-1.5">Archive</p>
                 <h2 className="text-heading-1 text-[var(--color-primary)] font-serif">
                   All Series &amp; Chapters
                 </h2>
@@ -160,16 +160,9 @@ export default function Home() {
       </section>
 
       {/* ── 4. Newsletter CTA ── */}
-      <section className="py-24 border-t border-[var(--color-border)]/60">
-        <motion.div
-          initial={{ opacity: 0, y: 35 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-50px" }}
-          transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-        >
-          <NewsletterCTA />
-        </motion.div>
-      </section>
+      <div className="border-t border-[var(--color-border)]/60">
+        <NewsletterCTA />
+      </div>
     </>
   );
 }

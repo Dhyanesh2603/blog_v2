@@ -143,20 +143,20 @@ export default function ArticleCard({ post, className }) {
       </div>
 
       {/* ── Card Body (Guaranteed Uniform Sizing Across All Cards) ── */}
-      <div className="p-5 sm:p-6 flex flex-col flex-1 justify-between">
+      <div className="p-4 sm:p-5 flex flex-col flex-1 justify-between">
         <div>
-          {/* Uniform Title Height: fixed 3.25rem space for perfect alignment */}
-          <div className="min-h-[3.25rem] flex items-start mb-2">
+          {/* Uniform Title Height: fixed 3rem space for perfect alignment */}
+          <div className="min-h-[3rem] flex items-start mb-1.5">
             <h3 className={cn(
-              "text-[17px] sm:text-[19px] font-semibold font-serif text-[var(--color-primary)] leading-snug line-clamp-2 transition-colors duration-200",
+              "text-[16px] sm:text-[18px] font-semibold font-serif text-[var(--color-primary)] leading-snug line-clamp-2 transition-colors duration-200",
               config.hoverText
             )}>
               {post.title}
             </h3>
           </div>
 
-          {/* Uniform Excerpt Height: fixed 2.75rem space for perfect alignment */}
-          <div className="min-h-[2.75rem] flex items-start mb-4">
+          {/* Uniform Excerpt Height: fixed 2.5rem space for perfect alignment */}
+          <div className="min-h-[2.5rem] flex items-start mb-3">
             <p className="text-body-sm text-[var(--color-secondary)] line-clamp-2 leading-relaxed text-xs sm:text-[13px]">
               {post.excerpt}
             </p>
@@ -164,7 +164,7 @@ export default function ArticleCard({ post, className }) {
         </div>
 
         {/* Footer Meta Row: Pinned to bottom */}
-        <div className="pt-3.5 mt-auto border-t border-[var(--color-border)]/60 flex items-center justify-between text-caption text-[var(--color-muted)]">
+        <div className="pt-3 mt-auto border-t border-[var(--color-border)]/60 flex items-center justify-between text-caption text-[var(--color-muted)]">
           <div className="flex items-center gap-1.5">
             <Calendar size={12} className="opacity-70" />
             <span>{formatDate(post.date)}</span>
