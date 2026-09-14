@@ -7,9 +7,9 @@ export default function Contact() {
   const [status, setStatus] = useState('idle'); // 'idle' | 'sending' | 'success' | 'activation' | 'error'
   const [errorMessage, setErrorMessage] = useState('');
 
-  // Target email obfuscated in base64 (temporarily dhyanesh450@gmail.com for testing)
+  // Target email obfuscated in base64 (siddarthsantosh3@gmail.com)
   // Ensures zero plain-text disclosure in UI while sending directly via serverless API
-  const getRecipient = () => atob('ZGh5YW5lc2g0NTBAZ21haWwuY29t');
+  const getRecipient = () => atob('c2lkZGFydGhzYW50b3NoM0BnbWFpbC5jb20=');
 
   const handleSubmit = async (e) => {
     e.preventDefault();
