@@ -63,7 +63,7 @@ export default function Layout() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
-          className="flex-1 pt-20"
+          className="flex-1 pt-28 sm:pt-32 md:pt-36"
         >
           <Outlet />
         </motion.main>
