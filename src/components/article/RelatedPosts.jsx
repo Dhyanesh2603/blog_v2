@@ -19,7 +19,7 @@ export function RelatedPosts({ posts }) {
               transition: { staggerChildren: 0.1 }
             }
           }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch"
         >
           {posts.map((post) => (
             <motion.div
@@ -28,8 +28,9 @@ export function RelatedPosts({ posts }) {
                 hidden: { opacity: 0, y: 20 },
                 visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } }
               }}
+              className="h-full flex flex-col"
             >
-              <ArticleCard post={post} />
+              <ArticleCard post={post} className="h-full flex-1" />
             </motion.div>
           ))}
         </motion.div>

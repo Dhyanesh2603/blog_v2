@@ -65,11 +65,11 @@ export default function Home() {
           >
             <a 
               href="#featured-chapter"
-              className="group inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-[var(--color-surface)] border border-[var(--color-border)] shadow-xs text-caption text-[var(--color-primary)] font-medium transition-all duration-300 hover:border-[var(--color-series-blue)]/50 hover:shadow-sm hover:-translate-y-0.5"
+              className="group inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-[var(--color-surface)] border border-[var(--color-border)] shadow-xs text-caption text-[var(--color-primary)] font-medium transition-all duration-300 hover:border-[var(--color-accent)]/40 hover:shadow-sm hover:-translate-y-0.5"
             >
-              <span className="w-2 h-2 rounded-full bg-[var(--color-series-blue)]" />
+              <span className="w-2 h-2 rounded-full bg-[var(--color-accent)]" />
               <span>The India Project</span>
-              <ArrowDown size={13} className="text-[var(--color-muted)] group-hover:text-[var(--color-series-blue)] transition-colors" />
+              <ArrowDown size={13} className="text-[var(--color-muted)] group-hover:text-[var(--color-accent)] transition-colors" />
             </a>
 
             <button 
@@ -77,9 +77,9 @@ export default function Home() {
                 setActiveCategory('family');
                 document.getElementById('library')?.scrollIntoView({ behavior: 'smooth' });
               }}
-              className="group inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-[var(--color-surface)] border border-[var(--color-border)] shadow-xs text-caption text-[var(--color-primary)] font-medium transition-all duration-300 hover:border-[var(--color-series-tan)]/50 hover:shadow-sm hover:-translate-y-0.5 cursor-pointer"
+              className="group inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-[var(--color-surface)] border border-[var(--color-border)] shadow-xs text-caption text-[var(--color-primary)] font-medium transition-all duration-300 hover:border-[var(--color-border-hover)] hover:shadow-sm hover:-translate-y-0.5 cursor-pointer"
             >
-              <span className="w-2 h-2 rounded-full bg-[var(--color-series-tan)]" />
+              <span className="w-2 h-2 rounded-full bg-[var(--color-secondary)]" />
               <span>Conversations with My Family</span>
               <span className="text-[10px] text-[var(--color-muted)] font-mono">· 3 parts</span>
             </button>
@@ -89,9 +89,9 @@ export default function Home() {
                 setActiveCategory('culture');
                 document.getElementById('library')?.scrollIntoView({ behavior: 'smooth' });
               }}
-              className="group inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-[var(--color-surface)] border border-[var(--color-border)] shadow-xs text-caption text-[var(--color-primary)] font-medium transition-all duration-300 hover:border-[var(--color-series-terra)]/50 hover:shadow-sm hover:-translate-y-0.5 cursor-pointer"
+              className="group inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-[var(--color-surface)] border border-[var(--color-border)] shadow-xs text-caption text-[var(--color-primary)] font-medium transition-all duration-300 hover:border-[var(--color-border-hover)] hover:shadow-sm hover:-translate-y-0.5 cursor-pointer"
             >
-              <span className="w-2 h-2 rounded-full bg-[var(--color-series-terra)]" />
+              <span className="w-2 h-2 rounded-full bg-[var(--color-muted)]" />
               <span>A Bit of South Asia</span>
               <span className="text-[10px] text-[var(--color-muted)] font-mono">· 3 stories</span>
             </button>

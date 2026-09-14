@@ -7,7 +7,7 @@ export default function BentoGrid({ posts }) {
 
   return (
     <div className="max-w-7xl mx-auto px-6 py-6">
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch">
         {posts.map((post, index) => {
           // Alternating side animation:
           // index % 2 === 0 slides in from left (-60px)
@@ -26,11 +26,11 @@ export default function BentoGrid({ posts }) {
                 delay: (index % 3) * 0.08, 
                 ease: [0.22, 1, 0.36, 1] 
               }}
-              className="h-full"
+              className="h-full flex flex-col"
             >
               <ArticleCard 
                 post={post} 
-                className="h-full" 
+                className="h-full flex-1" 
               />
             </motion.div>
           );

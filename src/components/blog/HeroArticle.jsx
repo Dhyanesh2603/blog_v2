@@ -19,23 +19,29 @@ export default function HeroArticle({ post }) {
       className="max-w-7xl mx-auto px-6"
     >
       <Link to={`/blog/${post.slug}`} className="group block">
-        {/* Permanent Solid Color Block Header (Zero photos on homepage as per v2 spec) */}
-        <div className="w-full h-44 sm:h-56 md:h-64 rounded-2xl bg-[var(--color-series-blue-block)] mb-8 transition-transform duration-500 ease-out group-hover:scale-[1.008] border border-[var(--color-border)]/60 relative overflow-hidden flex flex-col justify-between p-6 sm:p-8">
-          <div className="flex items-center justify-between">
-            <span className="text-overline text-[var(--color-series-blue)] font-bold tracking-widest bg-[var(--color-surface)]/80 backdrop-blur-md px-3.5 py-1 rounded-full border border-[var(--color-border)] shadow-xs">
+        {/* Theme-Aligned Cover Header (Consistent with modern editorial theme) */}
+        <div className="w-full h-44 sm:h-56 md:h-64 rounded-2xl bg-gradient-to-br from-[var(--color-elevated)] via-[var(--color-surface)] to-[var(--color-subtle)] mb-8 transition-transform duration-500 ease-out group-hover:scale-[1.008] border border-[var(--color-border)] relative overflow-hidden flex flex-col justify-between p-6 sm:p-8">
+          {/* Subtle Ambient Theme Glow */}
+          <div 
+            className="absolute -top-16 -right-16 w-64 h-64 bg-[var(--color-accent)]/10 rounded-full blur-3xl group-hover:bg-[var(--color-accent)]/18 transition-all duration-700 pointer-events-none" 
+            aria-hidden="true"
+          />
+
+          <div className="relative z-10 flex items-center justify-between">
+            <span className="text-overline text-[var(--color-primary)] font-bold tracking-widest bg-[var(--color-surface)]/90 backdrop-blur-md px-3.5 py-1.5 rounded-full border border-[var(--color-border)] shadow-xs">
               {post.chapter || 'Chapter 1'}
             </span>
-            <div className="hidden sm:flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[var(--color-surface)]/90 backdrop-blur text-caption text-[var(--color-primary)] font-medium border border-[var(--color-border)] shadow-xs transition-transform duration-300 group-hover:translate-x-1">
+            <div className="hidden sm:flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[var(--color-surface)]/90 backdrop-blur text-caption text-[var(--color-primary)] font-medium border border-[var(--color-border)] shadow-xs transition-all duration-300 group-hover:translate-x-1 group-hover:border-[var(--color-border-hover)]">
               <span>Read Chapter</span>
-              <ArrowRight size={14} className="text-[var(--color-series-blue)]" />
+              <ArrowRight size={14} className="text-[var(--color-accent)]" />
             </div>
           </div>
 
-          <div className="flex items-baseline justify-between">
-            <p className="text-caption font-semibold uppercase tracking-wider text-[var(--color-series-blue)] opacity-90">
+          <div className="relative z-10 flex items-baseline justify-between">
+            <p className="text-caption font-semibold uppercase tracking-wider text-[var(--color-secondary)] group-hover:text-[var(--color-primary)] transition-colors">
               {post.categoryLabel || 'The India Project'}
             </p>
-            <span className="text-caption text-[var(--color-secondary)] font-medium sm:hidden">
+            <span className="text-caption text-[var(--color-muted)] font-medium sm:hidden">
               {post.readTime || '6 min read'}
             </span>
           </div>
@@ -43,12 +49,12 @@ export default function HeroArticle({ post }) {
         
         <div className="max-w-4xl">
           <div className="mb-4">
-            <span className="inline-block px-3 py-1 rounded-full border border-[var(--color-series-blue)]/25 text-caption text-[var(--color-series-blue)] bg-[var(--color-series-blue-soft)] font-medium uppercase tracking-wider">
+            <span className="inline-block px-3 py-1 rounded-full border border-[var(--color-accent)]/20 text-caption text-[var(--color-accent)] bg-[var(--color-accent-soft)] font-medium uppercase tracking-wider">
               {post.categoryLabel || post.category}
             </span>
           </div>
           
-          <h1 className="text-display text-[var(--color-primary)] mb-5 line-clamp-2 transition-colors duration-200 group-hover:text-[var(--color-series-blue)]">
+          <h1 className="text-display text-[var(--color-primary)] mb-5 line-clamp-2 transition-colors duration-200 group-hover:text-[var(--color-accent)]">
             {post.title}
           </h1>
           

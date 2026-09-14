@@ -6,10 +6,12 @@ export default function ScrollProgress() {
   if (progress <= 0) return null;
 
   return (
-    <div className="fixed top-0 left-0 right-0 z-50 h-[3px] w-full bg-transparent">
+    <div className="fixed top-0 left-0 right-0 z-50 h-[3px] w-full bg-transparent pointer-events-none">
       <div 
-        className="h-full bg-gradient-to-r from-indigo-500 to-purple-500 transition-all duration-150 ease-out"
-        style={{ width: `${progress}%` }}
+        className="h-full bg-gradient-to-r from-[var(--color-accent)] via-purple-500 to-indigo-600 origin-left will-change-transform"
+        style={{ 
+          transform: `scaleX(${Math.max(0, Math.min(1, progress / 100))})`,
+        }}
       />
     </div>
   );

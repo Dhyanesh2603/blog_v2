@@ -42,7 +42,7 @@ export default function Blog() {
         </motion.div>
 
         {/* Post Grid with Side-Sliding Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch">
           {filteredPosts.map((post, i) => {
             const fromLeft = i % 2 === 0;
             return (
@@ -55,8 +55,9 @@ export default function Blog() {
                   delay: (i % 3) * 0.08, 
                   ease: [0.22, 1, 0.36, 1] 
                 }}
+                className="h-full flex flex-col"
               >
-                <ArticleCard post={post} />
+                <ArticleCard post={post} className="h-full flex-1" />
               </motion.div>
             );
           })}

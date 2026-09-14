@@ -12,17 +12,19 @@ export default function Layout() {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const location = useLocation();
 
-  // Smooth, reduced-speed inertia scrolling via Lenis
+  // Smooth inertia scrolling via Lenis (tuned 1.2x faster per user request)
   useEffect(() => {
     const lenis = new Lenis({
-      duration: 1.6, // Longer duration for calm, luxury scroll physics
+      duration: 1.15, // Tuned for snappier, faster response
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
       orientation: 'vertical',
       gestureOrientation: 'vertical',
       smoothWheel: true,
-      wheelMultiplier: 0.65, // Reduces scroll delta per wheel notch so the page doesn't scroll too quickly
-      touchMultiplier: 1.2,
+      wheelMultiplier: 0.80, // 1.2x faster scroll speed per wheel notch
+      touchMultiplier: 1.35,
     });
+
+    window.__lenis = lenis;
 
     let rafId;
     function raf(time) {
@@ -35,6 +37,9 @@ export default function Layout() {
     return () => {
       cancelAnimationFrame(rafId);
       lenis.destroy();
+      if (window.__lenis === lenis) {
+        window.__lenis = null;
+      }
     };
   }, []);
 
